@@ -1,0 +1,127 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: hsl(216 25% 95%); /* Light Gray #F0F2F5 */
+    --foreground: 225 15% 25%; /* Dark Gray #333A4D */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 225 15% 25%; /* Dark Gray */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 225 15% 25%; /* Dark Gray */
+
+    /* The primary and accent colors are now defined with hex values to support dynamic branding. */
+    /* They can be overridden by inline styles based on client settings. */
+    --primary: #00F3FF; /* Cyan */
+    --primary-foreground: #00292C; /* Dark Cyan/Black */
+
+    --secondary: 216 25% 90%; /* Slightly darker than background */
+    --secondary-foreground: 225 15% 25%; /* Dark Gray */
+
+    --muted: 216 25% 90%;
+    --muted-foreground: 225 15% 45%;
+
+    --accent: #FF4200; /* Orange-Red */
+    --accent-foreground: #FFFFFF; /* White */
+
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+
+    --border: 216 20% 85%;
+    --input: 216 20% 88%;
+    --ring: 183 100% 50%; /* Primary color HSL for ring focus */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 216 20% 92%; /* Slightly darker than main background #EAEFF2 */
+    --sidebar-foreground: 225 15% 25%; /* Dark Gray */
+    --sidebar-primary: #00d1e0; /* Slightly darker primary for active items */
+    --sidebar-primary-foreground: #00292C; /* Dark text on sidebar primary */
+    --sidebar-accent: #7ffaff; /* Lighter primary for hover */
+    --sidebar-accent-foreground: #00292C; /* Dark text on sidebar accent */
+    --sidebar-border: 216 20% 80%;
+    --sidebar-ring: 183 100% 50%; /* Primary color HSL for ring focus */
+
+    --chart-1: 15 100% 50%;
+    --chart-2: 300 100% 63%;
+    --chart-3: 57 100% 50%;
+    --chart-4: 80 100% 50%;
+    --chart-5: 183 100% 50%;
+  }
+
+  .dark {
+    --background: hsl(225 15% 15%);
+    --foreground: 216 25% 95%;
+
+    --card: 225 15% 18%;
+    --card-foreground: 216 25% 95%;
+
+    --popover: 225 15% 18%;
+    --popover-foreground: 216 25% 95%;
+
+    --primary: #00F3FF; /* Cyan */
+    --primary-foreground: #00292C; /* Dark Cyan/Black */
+
+    --secondary: 225 15% 25%;
+    --secondary-foreground: 216 25% 95%;
+
+    --muted: 225 15% 25%;
+    --muted-foreground: 216 25% 75%;
+
+    --accent: #FF4200; /* Orange-Red */
+    --accent-foreground: #FFFFFF; /* White */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 225 15% 30%;
+    --input: 225 15% 30%;
+    --ring: 183 100% 50%;
+    
+    --sidebar-background: 225 15% 20%;
+    --sidebar-foreground: 216 25% 95%;
+    --sidebar-primary: #00d1e0;
+    --sidebar-primary-foreground: #00292C;
+    --sidebar-accent: #4adfe8;
+    --sidebar-accent-foreground: #00292C;
+    --sidebar-border: 225 15% 28%;
+    --sidebar-ring: 183 100% 50%;
+
+    --chart-1: 15 100% 50%;
+    --chart-2: 300 100% 63%;
+    --chart-3: 57 100% 50%;
+    --chart-4: 80 100% 50%;
+    --chart-5: 183 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide native search input clear buttons */
+@layer components {
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="search"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
